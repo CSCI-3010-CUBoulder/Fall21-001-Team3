@@ -121,3 +121,18 @@ std::vector<int> SubtractN(std::vector<int>, int n);
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
+
+// divides an input integer by 2 until it is impossible to do so, then returns the final number.
+// (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
+int RemoveTwos(int original)
+{
+    int twos_removed = original;
+
+    do
+    {
+        twos_removed /= 2;
+
+    } while (twos_removed % 2 == 0);
+
+    return twos_removed;
+}
