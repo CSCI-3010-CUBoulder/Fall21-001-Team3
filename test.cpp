@@ -22,4 +22,18 @@ TEST_CASE("Test various behaviours of the RemoveTwos function", "[RemoveTwos]")
     {
         REQUIRE(RemoveTwos(52) == 13);
     }
+    SECTION("Passing odd returns same")
+    {
+        REQUIRE(RemoveTwos(13) == 13);
+    }
+    SECTION("Passing filled vec returns prod")
+    {
+        std::vector<int> test = std::vector<int>({1,2,3,4,5});
+        REQUIRE(Product(test) == 120);
+    }
+    SECTION("Passing empty vec returns 1")
+    {
+        std::vector<int> test = {};
+        REQUIRE(Product(test) == 1);
+    }
 }

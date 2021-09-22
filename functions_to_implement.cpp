@@ -24,10 +24,10 @@ int RemoveTwos(int original)
 {
     int twos_removed = original;
 
-    do
+    while (twos_removed % 2 == 0)
     {
         twos_removed /= 2;
-    } while (twos_removed % 2 == 0);
+    }
 
     return twos_removed;
 }
