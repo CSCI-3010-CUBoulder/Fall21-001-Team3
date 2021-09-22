@@ -51,3 +51,23 @@ TEST_CASE("Testing behaviors for Sum function", "[Sum]")
         REQUIRE(Product(test) == 1.0);
     }
 }
+
+TEST_CASE("Sum various behaviours of the sum functions.", "[Sum]")
+{
+    SECTION("Sum on empty vector returns 0")
+    {
+        std::vector<int> nothing;
+        REQUIRE(Sum(nothing) == 0);
+    }
+    SECTION("Sum of {1, 1} returns 2")
+    {
+        std::vector<int> nums {1, 1};
+        REQUIRE(Sum(nums) == 2);
+    }
+
+    SECTION("Sum of {1, 2, 3, 4, 5} returns 15")
+    {
+        std::vector<int> nums {1, 2, 3, 4, 5};
+        REQUIRE(Sum(nums) == 15);
+    }
+}
