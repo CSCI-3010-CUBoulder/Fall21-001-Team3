@@ -40,6 +40,58 @@ int RemoveTwos(int original)
 //
 //// returns a vector with true for odd numbers and false for even numbers
 //std::vector<bool> OddMask(std::vector<int>);
+
+// Sums all numbers in a vector and returns the resulting value
+int Sum(std::vector<int> nums)
+{
+    int sum = 0;
+    for(auto i : nums) {
+        sum += i;
+    }
+    return sum;
+}
+
+// Multiplies all numbers in a vector together and returns the resulting value
+int Product(std::vector<int> nums)
+{
+    int prod = 1;
+    for(auto i : nums) {
+        prod *= i;
+    }
+    return prod;
+}
+
+//// Adds an integer n to each element of a given vector
+//std::vector<int> VectorPlusN(std::vector<int> v, int n);
+//
+//// Multiples an integer n with each element of a given vector
+//std::vector<int> VectorTimesN(std::vector<int> v, int n);
+
+// takes in two integers and returns a vector of size n with
+// values n*1, n*2, n*3... up to n*m
+std::vector<int> Multiples(int n, int m)
+{
+    std::vector<int> vec = std::vector<int>(n);
+    for(int i = 1; i <= m; i++) {
+        vec.at(i) = n*i;
+    }
+    return vec;
+}
+
+//// takes an integer n that is >= 0 and returns a vector of all squares up to n^n (1^1, 2^2, 3^3, .... n^n)
+//std::vector<int> SquaresUntil(int n);
+//
+//// takes an int, n, and returns the nth value of the fibonacci sequence (1, 1, 2, 3, 5, 8, 13, ...)
+//int NthFibonacci(int n);
+
+//// takes a vector of integers and removes all elements evenly divisible by the passed in int
+//std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
+//
+//// returns a vector with true for even numbers and false for odd numbers
+//std::vector<bool> EvenMask(std::vector<int>);
+//
+//// returns a vector with true for odd numbers and false for even numbers
+//std::vector<bool> OddMask(std::vector<int>);
 //
 //// Sums all numbers in a vector and returns the resulting value
 //int Sum(std::vector<int> nums);
@@ -112,22 +164,92 @@ double Sum(std::vector<double> nums) {
 //// values n*1, n*2, n*3... up to n*m
 //std::vector<double> Multiples(double n, double m);
 
+// Multiplies all numbers in a vector together and returns the resulting value
+double Product(std::vector<double> nums)
+{
+    double prod = 1;
+    for(auto i : nums) {
+        prod *= i;
+    }
+    return prod;
+}
+
+// Adds an double n to each element of a given vector
+std::vector<double> VectorPlusN(std::vector<double> v, double n)
+{
+    for(auto i : v) {
+        i += n;
+    }
+    return v;
+}
+
+// Multiples an double n with each element of a given vector
+std::vector<double> VectorTimesN(std::vector<double> v, double n)
+{
+    for(auto i : v) {
+        i *= n;
+    }
+    return v;
+}
+
+// takes in two doubles and returns a vector of size n with
+// values n*1, n*2, n*3... up to n*m
+std::vector<double> Multiples(double n, double m)
+{
+    std::vector<double> vec = std::vector<double>(n);
+    for(int i = 1; i <= m; i++) {
+        vec.at(i) = n*i;
+    }
+    return vec;
+}
+
 // returns -1 if the number is negative and 1 if positive
 double Sign(double num) {
     return (num < 0) ? -1 : 1;
 }
 
-//// adds n to each element of the vector
-//std::vector<int> AddN(std::vector<int>, int n);
-//
-//// adds n to each element of the vector
-//std::vector<double> AddN(std::vector<double>, double n);
-//
-//// adds n to each element of the vector
-//std::vector<std::string> AddN(std::vector<std::string>, std::string n);
-//
-//// subtracts n to each element of the vector
-//std::vector<int> SubtractN(std::vector<int>, int n);
-//
-//// subtracts n to each element of the vector
-//std::vector<double> SubtractN(std::vector<double>, double n);
+// adds n to each element of the vector
+std::vector<int> AddN(std::vector<int> vec, int n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
+
+// adds n to each element of the vector
+std::vector<double> AddN(std::vector<double> vec, double n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
+
+// adds n to each element of the vector
+std::vector<std::string> AddN(std::vector<std::string> vec, std::string n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
+
+
+// subtracts n to each element of the vector
+std::vector<int> SubtractN(std::vector<int> vec, int n)
+{
+    for(auto i : vec) {
+        i -= n;
+    }
+    return vec;
+}
+
+// subtracts n to each element of the vector
+std::vector<double> SubtractN(std::vector<double> vec, double n)
+{
+    for(auto i : vec) {
+        i -= n;
+    }
+    return vec;
+}
