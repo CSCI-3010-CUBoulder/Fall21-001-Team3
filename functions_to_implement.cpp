@@ -89,17 +89,43 @@ double Sum(std::vector<double> nums) {
 }
 
 // Multiplies all numbers in a vector together and returns the resulting value
-double Product(std::vector<double> nums);
+double Product(std::vector<double> nums)
+{
+    double sum = 0;
+    for(auto i : nums) {
+        sum *= i;
+    }
+    return sum;
+}
 
 // Adds an double n to each element of a given vector
-std::vector<double> VectorPlusN(std::vector<double> v, double n);
+std::vector<double> VectorPlusN(std::vector<double> v, double n)
+{
+    for(auto i : v) {
+        i += n;
+    }
+    return v;
+}
 
 // Multiples an double n with each element of a given vector
-std::vector<double> VectorTimesN(std::vector<double> v, double n);
+std::vector<double> VectorTimesN(std::vector<double> v, double n)
+{
+    for(auto i : v) {
+        i *= n;
+    }
+    return v;
+}
 
 // takes in two doubles and returns a vector of size n with
 // values n*1, n*2, n*3... up to n*m
-std::vector<double> Multiples(double n, double m);
+std::vector<double> Multiples(double n, double m)
+{
+    std::vector<double> vec = std::vector<double>(n);
+    for(int i = 1; i <= m; i++) {
+        vec.at(i) = n*i;
+    }
+    return vec;
+}
 
 // returns -1 if the number is negative and 1 if positive
 double Sign(double num) {
@@ -107,20 +133,50 @@ double Sign(double num) {
 }
 
 // adds n to each element of the vector
-std::vector<int> AddN(std::vector<int>, int n);
+std::vector<int> AddN(std::vector<int> vec, int n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
 
 // adds n to each element of the vector
-std::vector<double> AddN(std::vector<double>, double n);
+std::vector<double> AddN(std::vector<double> vec, double n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
 
 // adds n to each element of the vector
-std::vector<std::string> AddN(std::vector<std::string>, std::string n);
+std::vector<std::string> AddN(std::vector<std::string> vec, std::string n)
+{
+    for(auto i : vec) {
+        i += n;
+    }
+    return vec;
+}
 
 
 // subtracts n to each element of the vector
-std::vector<int> SubtractN(std::vector<int>, int n);
+std::vector<int> SubtractN(std::vector<int> vec, int n)
+{
+    for(auto i : vec) {
+        i -= n;
+    }
+    return vec;
+}
 
 // subtracts n to each element of the vector
-std::vector<double> SubtractN(std::vector<double>, double n);
+std::vector<double> SubtractN(std::vector<double> vec, double n)
+{
+    for(auto i : vec) {
+        i -= n;
+    }
+    return vec;
+}
 
 // divides an input integer by 2 until it is impossible to do so, then returns the final number.
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
