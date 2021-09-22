@@ -128,7 +128,7 @@ int RemoveTwos(int original)
 {
     int twos_removed = original;
 
-    do
+    do      //fails on cases with odd original
     {
         twos_removed /= 2;
 
