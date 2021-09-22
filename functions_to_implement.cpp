@@ -32,10 +32,24 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums)
+{
+    int sum = 0;
+    for(auto i : nums) {
+        sum += i;
+    }
+    return sum;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums)
+{
+    int prod = 1;
+    for(auto i : nums) {
+        prod *= i;
+    }
+    return prod;
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
@@ -45,7 +59,14 @@ std::vector<int> VectorTimesN(std::vector<int> v, int n);
 
 // takes in two integers and returns a vector of size n with
 // values n*1, n*2, n*3... up to n*m
-std::vector<int> Multiples(int n, int m);
+std::vector<int> Multiples(int n, int m)
+{
+    std::vector<int> vec = std::vector<int>(n);
+    for(int i = 1; i <= m; i++) {
+        vec.at(i) = n*i;
+    }
+    return vec;
+}
 
 // takes an integer n that is >= 0 and returns a vector of all squares up to n^n (1^1, 2^2, 3^3, .... n^n)
 std::vector<int> SquaresUntil(int n);
@@ -91,11 +112,11 @@ double Sum(std::vector<double> nums) {
 // Multiplies all numbers in a vector together and returns the resulting value
 double Product(std::vector<double> nums)
 {
-    double sum = 0;
+    double prod = 1;
     for(auto i : nums) {
-        sum *= i;
+        prod *= i;
     }
-    return sum;
+    return prod;
 }
 
 // Adds an double n to each element of a given vector
